@@ -1,0 +1,42 @@
+# Core dependencies for computer vision and video processing
+opencv-python==4.11.0.86
+
+# Object detection and tracking
+ultralytics==8.3.168  # YOLO v8
+torch==2.7.1
+torchvision==0.22.1
+
+# Multi-object tracking
+filterpy==1.4.5
+scipy==1.16.0
+
+# Data science and analysis
+numpy==2.3.1
+pandas==2.3.1
+
+# Visualization
+matplotlib==3.10.3
+seaborn==0.13.2
+plotly==6.2.0
+
+# Jupyter for notebooks
+jupyter==1.0.0
+ipykernel==6.25.2
+
+# Image processing
+Pillow==11.3.0
+
+# Progress bars
+tqdm==4.67.1
+
+# Configuration management
+pyyaml==6.0.2
+
+# Testing
+pytest==7.4.2
+pytest-cov==4.1.0
+
+# Development tools
+#black==23.9.1
+#flake8==6.1.0
+#mypy==1.6.1
