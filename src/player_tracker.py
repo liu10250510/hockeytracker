@@ -16,7 +16,7 @@ from filterpy.kalman import KalmanFilter
 from scipy.optimize import linear_sum_assignment
 
 # Import headless utilities
-from utils.headless_utils import HeadlessSafeVideoProcessor
+from src.utils.headless_utils import HeadlessSafeVideoProcessor
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
