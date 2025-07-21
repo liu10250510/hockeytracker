@@ -36,6 +36,11 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Steamlit Web Interface in Cloud:
+```bash
+https://hockeytracker-ekzf82yag32qj9tvmpgclz.streamlit.app/
+```
+
 ### Streamlit Web Interface
 
 The easiest way to use the Hockey Tracker is through the Streamlit web interface:
