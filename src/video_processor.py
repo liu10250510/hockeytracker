@@ -11,9 +11,15 @@ from typing import List, Tuple, Optional, Generator
 import os
 import logging
 from pathlib import Path
+import sys
+
+# Get the project root directory
+project_root = Path(__file__).parent.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
 
 # Import headless utilities
-from src.utils.headless_utils import HeadlessSafeVideoProcessor
+from utils.headless_utils import HeadlessSafeVideoProcessor
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

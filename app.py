@@ -12,8 +12,17 @@ import sys
 from pathlib import Path
 
 # Add src directory to path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
+# Ensure the full path is correctly set for both local and cloud environments
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_path = os.path.join(current_dir, 'src')
+if src_path not in sys.path:
+    sys.path.insert(0, src_path)
 
+# Set up Python import paths more explicitly
+for path in sys.path:
+    print(f"Path: {path}")
+
+# Import project modules
 from player_detector import PlayerDetector
 from player_tracker import PlayerTracker
 from stats_analyzer import StatsAnalyzer

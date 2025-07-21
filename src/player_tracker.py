@@ -14,9 +14,17 @@ import logging
 # Import tracking algorithms
 from filterpy.kalman import KalmanFilter
 from scipy.optimize import linear_sum_assignment
+import sys
+import os
+from pathlib import Path
+
+# Get the project root directory
+project_root = Path(__file__).parent.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
 
 # Import headless utilities
-from src.utils.headless_utils import HeadlessSafeVideoProcessor
+from utils.headless_utils import HeadlessSafeVideoProcessor
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
