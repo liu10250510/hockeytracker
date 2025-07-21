@@ -1,5 +1,6 @@
 # Core dependencies for computer vision and video processing
-opencv-python==4.11.0.86
+opencv-python-headless==4.11.0.86
+openpyxl==3.1.5
 
 # Object detection and tracking
 ultralytics==8.3.168  # YOLO v8
@@ -35,6 +36,9 @@ pyyaml==6.0.2
 # Testing
 pytest==7.4.2
 pytest-cov==4.1.0
+
+# UI
+streamlit==1.47.0
 
 # Development tools
 #black==23.9.1

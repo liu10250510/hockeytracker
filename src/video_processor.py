@@ -11,6 +11,15 @@ from typing import List, Tuple, Optional, Generator
 import os
 import logging
 from pathlib import Path
+import sys
+
+# Get the project root directory
+project_root = Path(__file__).parent.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
+
+# Import headless utilities
+from utils.headless_utils import HeadlessSafeVideoProcessor
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -397,6 +406,12 @@ class RinkCalibrator:
         print("2. Right goal center")
         print("3. Center ice (optional)")
         print("Press 'q' when done")
+        
+        # Skip GUI operations if in headless environment
+        if HeadlessSafeVideoProcessor.is_headless_environment():
+            logger.warning("Running in headless environment. Calibration points cannot be collected via GUI.")
+            # Return default calibration points
+            return [(100, 250), (540, 250)]  # Default left and right goal centers
         
         cv2.namedWindow(self.window_name)
         cv2.setMouseCallback(self.window_name, self.mouse_callback)

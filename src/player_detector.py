@@ -10,6 +10,17 @@ import numpy as np
 from typing import List, Tuple, Dict, Optional
 from ultralytics import YOLO
 import logging
+import sys
+import os
+from pathlib import Path
+
+# Get the project root directory
+project_root = Path(__file__).parent.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
+
+# Import headless utilities
+from utils.headless_utils import HeadlessSafeVideoProcessor
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -168,7 +179,7 @@ class PlayerDetector:
             cap.release()
             if out is not None:
                 out.release()
-            cv2.destroyAllWindows()
+            HeadlessSafeVideoProcessor.destroy_all_windows()
         
         logger.info(f"Detection complete. Processed {frame_count} frames")
         return all_detections
