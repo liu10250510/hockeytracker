@@ -11,6 +11,9 @@ from typing import List, Tuple, Dict, Optional
 from ultralytics import YOLO
 import logging
 
+# Import headless utilities
+from utils.headless_utils import HeadlessSafeVideoProcessor
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -168,7 +171,7 @@ class PlayerDetector:
             cap.release()
             if out is not None:
                 out.release()
-            cv2.destroyAllWindows()
+            HeadlessSafeVideoProcessor.destroy_all_windows()
         
         logger.info(f"Detection complete. Processed {frame_count} frames")
         return all_detections

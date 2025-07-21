@@ -15,6 +15,9 @@ import logging
 from filterpy.kalman import KalmanFilter
 from scipy.optimize import linear_sum_assignment
 
+# Import headless utilities
+from utils.headless_utils import HeadlessSafeVideoProcessor
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -293,7 +296,7 @@ class PlayerTracker:
             cap.release()
             if out is not None:
                 out.release()
-            cv2.destroyAllWindows()
+            HeadlessSafeVideoProcessor.destroy_all_windows()
         
         # Compile final statistics
         final_stats = self._compile_statistics(all_tracks, fps)
