@@ -68,6 +68,8 @@ This will open a web browser with the interface where you can:
 3. Process videos and view results
 4. Download all results as a single ZIP file
 
+[![Watch the demo](apppicture.png)](streamlit-app.webm)
+
 ### Python API
 
 You can also use the individual components programmatically:
