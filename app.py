@@ -57,8 +57,8 @@ def main():
     )
     
     # File uploader
-    uploaded_file = st.file_uploader("Upload Hockey Video", type=["mp4", "avi", "mov"])
-    
+    uploaded_file = st.file_uploader("Upload Hockey Video", type=["mp4"], label_visibility="collapsed")
+
     if uploaded_file is not None:
         # Create temp directory for output
         output_dir = create_temp_output_folder()

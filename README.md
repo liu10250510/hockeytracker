@@ -25,6 +25,18 @@ A computer vision-based system for tracking hockey players in game videos using 
 
 ## Installation
 
+### Option 1: Using Dev Container (Recommended)
+
+This project supports development with VS Code Dev Containers, which provides a consistent and isolated environment with all dependencies pre-installed:
+
+1. Install [Docker](https://www.docker.com/products/docker-desktop/) and [VS Code](https://code.visualstudio.com/)
+2. Install the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) in VS Code
+3. Clone this repository and open it in VS Code
+4. When prompted, click "Reopen in Container" or use the command palette (F1) and select "Dev Containers: Reopen in Container"
+5. The container will build and start automatically, with all dependencies installed
+
+### Option 2: Manual Setup
+
 ```bash
 # Create virtual environment
 python -m venv venv
